@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Apply the Orbitron font to the entire app */
+body {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ff9f; /* Neon Green for text */
+  background-color: #080f1d; /* Deep Blue for background */
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #133e7c; /* Consistent with the page background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #f96363; /* Neon Purple for a glowing effect */
+  width: 100%; /* Adjust based on preference */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-container, .table-container {
+  flex: 1;
+  margin: 10px;
+  margin-right: 15px;
+
+}
+
+button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+
+  background-color: #00b8ff; /* Sky Blue for button background */
+  color: #001eff; /* Deep Blue for text */
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+ 
+  background-color: #7acae9; /* Sky Blue for button background */
+  color: #080f1d; /* Deep Blue for text */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  background-color: #e4e2e2;
+}
+
+::placeholder {
+  color: #5a5e5e;
+  opacity: 1; /* Firefox */
+  font-weight: 100;
+}
+
+.myBtn {
+  font-size: 1.5rem;
+  margin-right: 4px;
+}
+
+.delBtn {
+  color: #f2487e;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delBtn:hover {
+  color: #cd1851;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.editBtn {
+  color: #63f5bd;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.editBtn:hover {
+  color: #ffffff;
+}
+
+.addBtn, .updateBtn {
+  color: #080f1d;
+  font-weight: bold;
+}
+
+
+
+button:hover {
+  background-color: #05d9e8;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #00ff9f; /* Neon Green for table borders */
+}
+
+th {
+  color: #d1f7ff;
+}
+
+td {
+  padding: 5px;
+  font-family: 'Merriweather','Courier New', Courier, monospace;
+}
+
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #133e7c; /* Deep Blue, matching the theme */
+  color: #00ff9f; /* Neon Green for text */
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 -1px 5px #f2487e; /* Neon Purple for a subtle glow at the top */
+}
+
+/* Adjust the App's min-height to ensure content does not overlap with the footer */
+body, .App {
+  /* min-height: calc(100vh - 40px);  */
+  flex-direction: row;
+}
+
+/* Ensure content within .App is scrollable if it exceeds viewport height */
+.App {
+  overflow: auto;
+  padding-bottom: 40px; /* Same as footer height to prevent content from being hidden */
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    align-items: center;
+
   }
-  to {
-    transform: rotate(360deg);
+
+  .form-container, .table-container {
+    width: 100%;
   }
 }
